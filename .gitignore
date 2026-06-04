@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+.env
+.uv-cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+
+# Node
+node_modules/
+.next/
+.turbo/
+dist/
+*.log
+.pnpm-store/
+*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.egg-info/
+build/
+*.tar.gz
+
+# Local secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Compose volumes data (when bind-mounted for debug)
+deploy/compose/data/
+
+# Generated contracts artifacts that should NOT be committed
+# (We DO commit `packages/contracts-ts/src/*.ts` — only intermediate JSON Schemas are transient)
+packages/contracts-ts/schemas/
