@@ -59,6 +59,12 @@ class KnoxAuthFactory:
 			session.headers["Authorization"] = f"Bearer {jwt}"
 			return session
 
+		# Direct HTTP Basic auth against the NiFi API (Knox basic-auth topology, e.g. cdp-proxy-api).
+		# Mirrors `curl -u user:pass`; used when a username/password is given without a Knox token endpoint.
+		if self.user and self.password:
+			session.auth = (self.user, self.password)
+			return session
+
 		return session
 
 	def _fetch_knox_token(self) -> str:
